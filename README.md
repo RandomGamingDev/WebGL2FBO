@@ -1,7 +1,7 @@
 # WebGL2FBO
 A simple library for OOP encapsulation and abstraction of some of WebGL2 Framebuffers and the Renderbuffers they rely on.
 
-Note: If you wanna see examples of how to use the library check out https://github.com/RandomGamingDev/WebGL2FBO/tree/main/examples and if you want to learn about the more complex features you can search on Google and check out the WebGL documentation since this is basically just an OOP overlay over the WebGL API which means that u should be able to figure out how to use the library from the WebGL documentation.
+Note: If you wanna see examples of how to use the library check out https://github.com/RandomGamingDev/WebGL2FBO/tree/main/examples and if you want to learn about the more complex features you can search on Google and check out the WebGL documentation since this is basically just an OOP overlay over the WebGL API to make it easier to use and learn which means that u should be able to figure out how to use the library from the WebGL documentation.
 
 There are the `Framebuffer` and `Renderbuffer` classes which can be used alongside regular WebGL code or with libraries that can interface with regular WebGL code (this includes a library that I made for WebGL2 textures that I recommend you use when using this library here's the [link](https://github.com/RandomGamingDev/WebGL2Tex))
 
