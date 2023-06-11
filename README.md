@@ -3,6 +3,8 @@ A simple library for OOP encapsulation and abstraction of some of WebGL2 Framebu
 
 There are the `Framebuffer` and `Renderbuffer` classes which can be used alongside regular WebGL code or with libraries that can interface with regular WebGL code (this includes a library that I made for WebGL2 textures that I recommend you use when using this library here's the [link](https://github.com/RandomGamingDev/WebGL2Tex))
 
+In order to properly render to the buffer's dimensions use `gl.viewport` in order to set the proper viewport and then set it back.
+
 Check the code and the WebGL documentation for the parameters needed.
 
 To use this library you can simply include https://cdn.jsdelivr.net/gh/RandomGamingDev/WebGL2FBO/fbo.js in your HTML file! If you want to you can also just download the file and include it in your HTML file that way.
