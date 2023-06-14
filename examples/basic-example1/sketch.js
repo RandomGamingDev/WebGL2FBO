@@ -16,6 +16,7 @@ function preload() {
 
 function setup() {
   createCanvas(400, 400, WEBGL);
+  noStroke();
   gl = drawingContext;
   console.log("Flag0");
   const test = new Uint8Array([
@@ -29,6 +30,8 @@ function setup() {
   img.paramI(gl.TEXTURE_MIN_FILTER, gl.NEAREST);
   console.log("Flag1");
   
+  fbRBO = new Renderbuffer(gl.DEPTH_COMPONENT16, dim, dim, drawingContext);
+  
   fbTex = new Texture.T2D(0, gl.RGBA, dim, dim, 0, 0, gl.RGBA, gl.UNSIGNED_BYTE, null, gl);
   img.paramI(gl.TEXTURE_MAG_FILTER, gl.NEAREST);
   img.paramI(gl.TEXTURE_MIN_FILTER, gl.NEAREST);
@@ -36,6 +39,7 @@ function setup() {
   fb = new Framebuffer(gl);
   fb.bind();
   fb.linkTexture2D(gl.COLOR_ATTACHMENT0, fbTex.bufType, fbTex.tex, 0);
+  fb.linkRBO(gl.DEPTH_ATTACHMENT, fbRBO.rb);
   
   console.log(gl.getError());
   //noStroke();
@@ -47,9 +51,23 @@ function draw() {
   fb.bind();
   gl.viewport(0, 0, dim, dim);
   
+  clear();
+  
+  push();
+  translate(-100, -100);
+  sphere(100);
+  pop();
+  
   shader(shad);
   img.bind();
   img.setUniform(shad._glProgram, "test");
+  
+  push();
+  rotateX(frameCount * 0.02);
+  rotateY(frameCount * 0.02);
+  translate(-10, -10);
+  sphere(100);
+  pop();
   
   rect(0, 0, 100, 100);
   
