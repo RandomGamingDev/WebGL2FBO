@@ -67,6 +67,10 @@ class Framebuffer {
                             mask, filt);
   }
   
+  readPixels(x, y, w, h, format, type, pixels, writeOffset) {
+    this.gl.readPixels(x, y, w, h, format, type, pixels, writeOffset);
+  }
+
   linkTexture2D(attachmentPoint, texType, tex, level) {
     this.gl.framebufferTexture2D(this.bufType, attachmentPoint, texType, tex, level);
   }
