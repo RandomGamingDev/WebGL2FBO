@@ -67,7 +67,7 @@ class Framebuffer {
                             mask, filt);
   }
   
-  readPixels(x, y, w, h, format, type, pixels, writeOffset) {
+  readPixels(x, y, w, h, format, type, pixels, writeOffset = 0) {
     this.gl.readPixels(x, y, w, h, format, type, pixels, writeOffset);
   }
 
